@@ -1,7 +1,9 @@
 <div class="container text-center">
 
   <h1>Le détail du produit</h1>
-  <h2>  <%= @product.name %> </h2>
-  <h3> Url : <%= @product.url %></h3>
-
+  <h2 class = "text-center">  <%= @product.name %> </h2>
+  <h3 class = "text-center"> Url : <%= @product.url %></h3>
+  <p class = "text-center">
+    <%= link_to "revenir à la liste de produits", products_path%>
+  </p>
 </div>
