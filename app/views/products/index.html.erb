@@ -3,6 +3,7 @@
 <h1>Les produits</h1>
 <p>
   <%= link_to "Revenir à l'acceuil", root_path, class: "btn btn-primary" %>
+  <%= link_to "Créer nouveau produit", new_product_path, class: "btn btn-success" %>
 </p>
 <ul>
   <%  @products.each do |product| %>
