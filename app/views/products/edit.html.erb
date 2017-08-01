@@ -1,16 +1,18 @@
 <div class="contain">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <h1 class="text-center">Ajouter un produit</h1>
+      <h1 class="text-center">Editer le produit</h1>
+
 
       <%= render "form" %>
-<!--       <%= simple_form_for @product do |f| %>
+
+      <!--       <%= simple_form_for @product do |f| %>
         <%= f.input :name, placeholder: "Kudoz", label: "Which product?" %>
         <%= f.input :url, placeholder: "http://kudoz.com", label: "Which url?" %>
         <%= f.button :submit ,"Sauvegarder", class: "btn btn-primary" %>
       <% end %> -->
 
-      <%= link_to "Cancel", products_path, class: "btn btn-info" %>
+        <%= link_to "Cancel", product_path(@product), class: "btn btn-info" %>
       <!-- <form action="/products" method = "post">
         <div class="form-group">
           <label for="name">Choisissez un nom de produit</label>

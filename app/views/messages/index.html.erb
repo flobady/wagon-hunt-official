@@ -1,0 +1,10 @@
+<div class="container">
+    <ul>
+      <%= @messages.each do |message| %>
+      <li>
+        <%= message.author %> - <%= message.content %>
+        <%= link_to "voir le message", root_path %>
+      </li>
+      <% end %>
+    </ul>
+</div>

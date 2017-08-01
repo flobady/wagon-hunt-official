@@ -5,6 +5,15 @@ Rails.application.routes.draw do
   get "/contact" => "pages#join_us"
 
   resources :products
+
+  # Read action routes
+  get "/messages"     => "messages#index"
+  get "/messages/:id" => "messages#show"
+  get "/messages/new" => "messages#new"
+  post "/messages"    => "messages#create"
+
+
+
   # # Read action routes
   # get "/products" => "products#index"
   # get "/products/:id" => "products#show"
