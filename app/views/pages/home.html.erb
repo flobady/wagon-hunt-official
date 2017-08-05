@@ -1,13 +1,23 @@
-<div class="container text-center">
-  <h1> Wagon Hunt</h1>
-  <p>Find the best tech products</p>
-  <p>
-    We have <strong> lots of new products </strong> on <%= @today %>
-  </p>
-  <p>
-    <%= link_to "Accéder aux produits", products_path,class: "btn btn-success"%>
-  </p>
-  <p>
-    <%=  link_to "Accéder aux messages", messages_path, class: "btn btn-warning"%>
-  </p>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(' <%= image_path "background.jpg" %>');">
+  <div class="banner-content">
+    <h1>Lobady Lobada</h1>
+    <p>We have <strong> lots of new products </strong> on <%= @today %></p>
+    <%= link_to "Accéder aux produits", products_path,class: "btn btn-primary btn-lg" %>
+    <%=  link_to "Accéder aux messages", messages_path, class: "btn btn-warning btn-lg" %>
+  </div>
+</div>
+
+
+<div class="container padded">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+       <%= link_to "Design", products_path(category: "design"), class:"card-category" %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+       <%= link_to "Tech", products_path(category: "tech"), class:"card-category" %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+       <%= link_to "Education", products_path(category: "education"), class:"card-category" %>
+    </div>
+  </div>
 </div>

@@ -1,17 +1,61 @@
 <div class="container text-center">
 
-<h1>Les produits</h1>
-<p>
+
+<!-- <p>
   <%= link_to "Revenir à l'acceuil", root_path, class: "btn btn-primary" %>
   <%= link_to "Créer nouveau produit", new_product_path, class: "btn btn-success" %>
-</p>
-<ul>
-  <%  @products.each do |product| %>
-    <li>
-      <%= product.name %> (<%= product.url %>)
-      <%= link_to "select this product",product_path(product) %>
-    </li>
-  <% end %>
-</ul>
+</p> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1 class="text-center">Les produits</h1>
+
+      <% @products.each do |product| %>
+
+          <div class="product">
+            <div class='product-upvote'>
+              <div class="product-arrow"></div>
+              <div class='product-count'>95</div>
+            </div>
+          <img src="http://unsplash.it/300/200" alt="kudoz" class="product-image hidden-xs">
+          <div class='product-body'>
+            <h3> <%= link_to product.name ,product_path(product) %> </h3>
+
+            <p> <%= product.tagline %> </p>
+          </div>
+          <ul class="list-inline product-controls hidden-sm hidden-xs">
+            <li>
+              <%= link_to product_path(product) do %>
+                <i class="fa fa-eye"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to edit_product_path(product) do %>
+              <i class="fa fa-pencil"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to product_path(product), method: :delete do %>
+                <i class="fa fa-trash"></i>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
 
 </div>
