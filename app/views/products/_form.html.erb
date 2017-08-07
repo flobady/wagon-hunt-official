@@ -4,5 +4,6 @@
   <%= f.input :url, placeholder: "http://kudoz.com", label: "Which url?" %>
   <%= f.input :tagline, placeholder: "Ceci est la catch phrase", label: "What tagline?" %>
   <%= f.input :category, collection: ["tech", "education", "design"], prompt: "Which category?" %>
+  <%= f.input :photo, as: :attachinary %>
   <%= f.button :submit ,"Sauvegarder", class: "btn btn-primary" %>
 <% end %>

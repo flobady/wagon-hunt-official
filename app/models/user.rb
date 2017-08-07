@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_attachment :avatar
   has_many :products
 
   # Include default devise modules. Others available are:

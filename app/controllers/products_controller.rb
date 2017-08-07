@@ -34,9 +34,14 @@ class ProductsController < ApplicationController
 
   def update
     # @product = Product.find(params[:id])
-    if @product.update(product_params)
-      redirect_to products_path
-    else render :edit
+    if @product.user == current_user
+      if @product.update(product_params)
+        redirect_to products_path
+      else render :edit
+      end
+    else
+      flash[:alert]= "Action impossible, ceci n'est pas votre produit"
+      render :edit
     end
   end
 
@@ -50,7 +55,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :url, :tagline, :category)
+    params.require(:product).permit(:name, :url, :tagline, :category, :photo)
   end
 
   def find_product

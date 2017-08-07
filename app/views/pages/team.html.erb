@@ -1,10 +1,14 @@
 <div class="container text-center">
-<h1> Meet the team</h1>
-<ul>
+  <h2>oulala</h2>
 
-  <%= @members.each do |member|%>
-  <li> Member: <%= member %> </li>
-  <% end %>
+  <h1> Meet the team</h1>
 
-</ul>
+    <ul>
+<%= cl_image_tag "m0qygpbltkvfknbxzjdj", height: 100, width: 400, crop: :fill %>
+
+      <%= @members.each do |member|%>
+      <li> Member: <%= member %> </li>
+      <% end %>
+
+    </ul>
 </div>
