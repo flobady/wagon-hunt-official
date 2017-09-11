@@ -7,12 +7,14 @@ Rails.application.routes.draw do
   get "/contact" => "pages#join_us"
 
   resources :products
+  resources :upvotes, only: [ :create, :destroy ]
+  resources :messages, only: [ :create, :index, :show, :new ]
 
   # Read action routes
-  get "/messages"     => "messages#index"
-  get "/messages/:id" => "messages#show"
-  get "/messages/new" => "messages#new"
-  post "/messages"    => "messages#create"
+  # get "/messages"     => "messages#index"
+  # get "/messages/:id" => "messages#show"
+  # get "/messages/new" => "messages#new"
+  # post "/messages"    => "messages#create"
 
 
 

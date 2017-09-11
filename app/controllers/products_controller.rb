@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
 
   def show
     # @product = Product.find(params[:id])
+    @messages = Message.where(product: params[:id])
   end
 
   def new

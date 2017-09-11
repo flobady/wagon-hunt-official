@@ -1,0 +1,6 @@
+<%= simple_form_for @message, @product do |f| %>
+  <%= @message.errors.full_messages %>
+  <%= f.input :content, placeholder: "ici votre message"%>
+  <%= f.input :product %>
+  <%= f.button :submit ,"Poster", class: "btn btn-primary" %>
+<% end %>

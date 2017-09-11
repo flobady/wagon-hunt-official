@@ -10,11 +10,17 @@
     <% if @product.photo? %>
       <%= cl_image_tag @product.photo.path, width: 200 %>
     <% end %>
-
+    <ul>
+        <% @messages.each do |message| %>
+          <li> <%= message.user.email %> : <%= message.content %> </li>
+        <% end %>
+    </ul>
     <%= link_to "Visit website", @product.url, class: "btn btn-primary" %>
     <%= link_to "Editer", edit_product_path(@product), class: "btn btn-warning" %>
     <%= link_to "Supprimer",product_path(@product), method: :delete, class: "btn btn-danger" %>
     <%= link_to "Revenir à la liste de produits", products_path, class: "btn btn-info" %>
+    <%= link_to "Liker", upvotes_path, method: :post, class: "btn btn-info" %>
+    <%= link_to "Poster", new_message_path, class: "btn btn-info" %>
   </div>
 </div>
 

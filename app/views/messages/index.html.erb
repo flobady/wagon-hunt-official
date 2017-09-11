@@ -1,10 +1,14 @@
 <div class="container">
-    <ul>
-      <%= @messages.each do |message| %>
-      <li>
-        <%= message.author %> - <%= message.content %>
-        <%= link_to "voir le message", root_path %>
-      </li>
-      <% end %>
-    </ul>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <ul>
+        <%= @messages.each do |message| %>
+          <li>
+            <%= message.user.email %> - <%= message.content %>
+            <%= link_to "voir le message", message_path(message) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>

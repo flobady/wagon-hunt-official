@@ -1,4 +1,6 @@
 class Message < ApplicationRecord
-  validates :author, presence:true
-  validates :content, presence:true
+  belongs_to :user
+  belongs_to :product
+
+  validates :content, presence: true
 end
