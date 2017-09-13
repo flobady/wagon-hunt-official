@@ -2,23 +2,28 @@ class UpvotesController < ApplicationController
 
 
   def create
-    @upvote = Upvote.new(user_id: current_user.id, product_id: params[:product_id])
-    #@upvote.user_id = current_user.id
-    #@upvote.product_id = 14
-    @upvote.save
-    redirect_to products_path
+    @product = Product.find( params[:product_id] )
+    @product.upvotes.create! user: current_user
 
-    #params[:product_id]
+    respond_to do |format|
+      format.html {redirect_to products_path}
+      format.js
+    end
 
-    # product = Product.find( params[:product_id] )
-    # product.upvotes.create! user: current_user
-    # redirect_to products_path
+    # autre méthode pour insérer data en base (méthode Floflo)
+    #@upvote = Upvote.new(user_id: current_user.id, product_id: params[:product_id])
+    #@upvote.save
+
   end
 
   def destroy
     upvote = Upvote.find(params[:id])
+    @product = upvote.product
     upvote.destroy
-    redirect_to products_path
+    respond_to do |format|
+      format.html {redirect_to products_path}
+      format.js
+    end
 
     # if @product.upvote.destroy
     # then redirect_to products_path
